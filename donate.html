@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - Gracious Giving</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for the donate page */
+    .dropdown {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      width: 300px; /* Centered width */
+      margin: 0 auto; /* Center the form */
+      text-align: center; /* Center field names */
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      width: auto; /* Smaller width */
+      padding: 8px 12px; /* Adjusted padding */
+      margin: 0 auto; /* Center the submit button */
+      display: block; /* Centering */
+    }
+
+    .pdf-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .pdf-section p {
+      margin-bottom: 10px;
+    }
+
+    /* Styles for buttons to match navbar */
+    .donate-button {
+      display: block; /* Stack buttons */
+      background-color: #333; /* Same background as navbar */
+      color: white; /* White text */
+      padding: 10px 20px; /* Padding similar to navbar links */
+      border-radius: 5px; /* Rounded corners */
+      margin: 10px auto; /* Center buttons with margin */
+      text-align: center; /* Center text */
+      text-decoration: none; /* Remove underline */
+      width: 200px; /* Fixed width */
+    }
+
+    .donate-button:hover {
+      background-color: #555; /* Darker background on hover */
+    }
+
+    /* Collection/Delivery dropdown styles */
+    .collection-delivery {
+      width: 100%; /* Full width */
+      padding: 10px; /* Padding similar to navbar links */
+      margin: 10px 0; /* Margin for spacing */
+      border-radius: 5px; /* Rounded corners */
+      border: 1px solid #ccc; /* Border */
+      font-size: 16px; /* Font size */
+    }
+
+    /* Header section styles */
+    .header-section {
+      text-align: center; /* Center the header text */
+      margin-bottom: 20px; /* Space below the header */
+    }
+
+    .header-section img {
+      width: 100%; /* Responsive image */
+      height: auto; /* Maintain aspect ratio */
+      max-width: 800px; /* Max width to control size */
+      margin: 0 auto; /* Center image */
+      display: block; /* Center block element */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Gracious Giving</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Who Are We</a></li>
+      <li><a href="index.html">What We Do</a></li>
+      <li><a href="index.html">Contact Us</a></li>
+      <li><a href="donate.html" class="donate-btn">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="header-section">
+    <h1>Support Our Cause</h1>
+    <img src="IMG_1788.jpg" alt="Support Image">
+  </section>
+
+  <section id="donate">
+    <h1>Your Assistance Leads to a Great Cause</h1>
+    <p>You may assist through donating clothes, shoes, or food.</p>
+    
+    <a href="javascript:void(0);" class="donate-button" onclick="toggleDropdown('clothes')">Clothes and Shoes</a>
+    <div id="clothes" class="dropdown">
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="item">Donate Clothes/Shoes:</label>
+          <select id="item" name="item" required class="collection-delivery">
+            <option value="">Select</option>
+            <option value="clothes">Clothes</option>
+            <option value="shoes">Shoes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="collection-delivery">Deliver Items or We Collect:</label>
+          <select id="collection-delivery" name="collection-delivery" required class="collection-delivery">
+            <option value="">Select</option>
+            <option value="collection">Collection</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Date Available (if we collect):</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Your Location:</label>
+          <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+          <label for="contact">Your Contact Number:</label>
+          <input type="tel" id="contact" name="contact" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <a href="javascript:void(0);" class="donate-button" onclick="toggleDropdown('food')">Food</a>
+    <div id="food" class="dropdown">
+      <div class="pdf-section">
+        <p>Any amount donated will be appreciated and put to a good cause.</p>
+        <a href="SavingsAccountDetails.pdf" target="_blank">Download Banking Details</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Gracious Giving</p>
+    <p>&copy; 2024 All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Toggle dropdown visibility
+    function toggleDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      const isDisplayed = dropdown.style.display === 'block';
+      dropdown.style.display = isDisplayed ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
